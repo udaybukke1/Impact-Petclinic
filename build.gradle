@@ -17,3 +17,16 @@ docker {
     ports '8080:8080'
     clean true
 }
+
+test {
+    filter {
+        //include specific method in any of the tests
+        includeTestsMatching "*UiCheck"
+
+        //include all tests from package
+        includeTestsMatching "org.gradle.internal.*"
+
+        //include all integration tests
+        includeTestsMatching "*IntegTest"
+    }
+}
