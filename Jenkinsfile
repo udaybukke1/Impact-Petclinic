@@ -1,11 +1,6 @@
 pipeline {
     agent any
-  stages {
-      stage ('checkout scm'){
-          steps {
-           git 'checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/udaybukke1/Impact-Petclinic.git']]]'
-          }
-      }
+    stages {
         stage('Build docker file'){
             steps {
               sh 'gradle docker'    
