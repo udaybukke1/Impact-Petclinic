@@ -9,11 +9,11 @@ pipeline {
              bat 'gradle build'
            }
        }
-       stage('Test cases') {
+      /* stage('Test cases') {
            steps {
              bat 'gradle test --tests SomeTestClass'
            }
-       }
+       }*/
        
          stage('Build docker file'){
             steps {
