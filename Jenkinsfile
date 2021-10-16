@@ -11,12 +11,12 @@ pipeline {
        }
          stage('Build docker file'){
             steps {
-              sh 'gradle docker'    
+              bat 'gradle docker'    
         }
      }
         stage('Run the Dockerfile') {
             steps {
-                sh 'gradle dockerRun'
+                bat 'gradle dockerRun'
             }
         }
        
