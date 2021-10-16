@@ -9,7 +9,7 @@ pipeline {
              bat 'gradle build'
            }
        }
-      /*   stage('Build docker file'){
+         stage('Build docker file'){
             steps {
               sh 'gradle docker'    
         }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh 'gradle dockerRun'
             }
-        }*/
+        }
        
     }
 }
