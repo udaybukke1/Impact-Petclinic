@@ -6,7 +6,7 @@ pipeline {
    stages {
        stage('Build the Dockerfile') {
            steps {
-             sh 'gradle build'
+             bat 'gradle build'
            }
        }
       /*   stage('Build docker file'){
