@@ -8,18 +8,18 @@ pipeline {
     }
         stage('Build') {
             steps {
-                sh './gradlew assemble'
+                sh 'gradle assemble'
             }
         }
         stage('Build1'){
             steps {
-              sh './gradlew build'
+              sh 'gradle build'
             }
             
         }
         stage('Test') {
             steps {
-                sh './gradlew test'
+                sh 'gradle test'
             }
         }
     }
