@@ -11,7 +11,7 @@ pipeline {
        }
        stage('Test cases') {
            steps {
-             bat 'gradle unit test'
+             bat 'gradle test --tests SomeTestClass'
            }
        }
        
