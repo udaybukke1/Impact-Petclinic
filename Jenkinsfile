@@ -4,7 +4,7 @@ pipeline {
   gradle 'Gradle'
 }
    stages {
-       stage('Build the Dockerfile') {
+       stage('Compile the Source code') {
            steps {
              bat 'gradle build'
            }
