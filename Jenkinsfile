@@ -9,6 +9,12 @@ pipeline {
              bat 'gradle build'
            }
        }
+       stage('Test cases') {
+           steps {
+             bat 'gradle test'
+           }
+       }
+       
          stage('Build docker file'){
             steps {
               bat 'gradle docker'    
