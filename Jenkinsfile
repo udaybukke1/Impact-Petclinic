@@ -1,25 +1,14 @@
 pipeline {
     agent any
-      stages {
-    stage('Checkout code') {
-        steps {
-            checkout scm
-        }
-    }
-        stage('Build') {
+  stages {
+        stage('Build docker file'){
             steps {
-                sh 'gradle assemble'
-            }
+              sh 'gradle docker'    
         }
-        stage('Build1'){
+     }
+        stage('Run the Dockerfile') {
             steps {
-              sh 'gradle build'
-            }
-            
-        }
-        stage('Test') {
-            steps {
-                sh 'gradle test'
+                sh 'gradle dockerRun'
             }
         }
     }
