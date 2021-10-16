@@ -1,7 +1,11 @@
 pipeline {
     agent any
-    
-    stages {
+      stages {
+    stage('Checkout code') {
+        steps {
+            checkout scm
+        }
+    }
         stage('Build') {
             steps {
                 sh './gradlew assemble'
