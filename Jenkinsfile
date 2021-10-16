@@ -3,8 +3,13 @@ pipeline {
      tools {
   gradle 'Gradle'
 }
-    stages {
-        stage('Build docker file'){
+   stages {
+       stage('Build the Dockerfile') {
+           steps {
+             sh 'gradle build'
+           }
+       }
+      /*   stage('Build docker file'){
             steps {
               sh 'gradle docker'    
         }
@@ -13,6 +18,7 @@ pipeline {
             steps {
                 sh 'gradle dockerRun'
             }
-        }
+        }*/
+       
     }
 }
