@@ -1,6 +1,7 @@
 plugins {
     id "com.palantir.docker" version "0.22.1"
 	id "com.palantir.docker-run" version "0.22.1"
+	 id "org.sonarqube" version "3.3"
 }
 
 version '0.1.0'
@@ -17,5 +18,9 @@ docker {
     ports '8080:8080'
     clean true
 }
-
+stage('SonarQube Analysis') {
+    withSonarQubeEnv() {
+      sh "./gradlew sonarqube"
+    }
+  }
 
