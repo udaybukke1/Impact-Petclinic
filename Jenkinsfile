@@ -25,6 +25,11 @@ pipeline {
                 bat 'gradle dockerRun'
             }
         }
+       stage('SonarQube Analysis') {
+    withSonarQubeEnv() {
+      sh "./gradlew sonarqube"
+    }
+  }
        
     }
 }
