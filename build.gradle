@@ -18,9 +18,5 @@ docker {
     ports '8080:8080'
     clean true
 }
-stage('SonarQube Analysis') {
-    withSonarQubeEnv() {
-      sh "./gradlew sonarqube"
-    }
-  }
+
 
