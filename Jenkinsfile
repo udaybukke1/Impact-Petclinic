@@ -25,9 +25,9 @@ pipeline {
                 bat 'gradle dockerRun'
             }
         }
-    stage('SonarQube Analysis') {
-           steps{
-             sh "./gradlew sonarqube"
+    stage('SonarQube analysis') {
+    withSonarQubeEnv() { // Will pick the global server connection you have configured
+      bat 'gradle sonarqube'
     }
   }
    }  
